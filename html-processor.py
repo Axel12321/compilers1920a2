@@ -13,7 +13,7 @@ with open("C:/Users/kakos/Downloads/stefanidakis2002.txt", "r", encoding="utf-8"
     new_text = repx2.sub("", text)
 
     #apalifi <script><style>
-    repx3 = re.compile(r"(<script.+?</script>)|(<style.+?</style>)")
+    repx3 = re.compile(r"(<script.+?</script>)|(<style.+?</style>)"re.DOTALL)
     new_text2 = repx3.sub("",new_text)
 
     #eksagogi kai print <a>
@@ -47,4 +47,7 @@ with open("C:/Users/kakos/Downloads/stefanidakis2002.txt", "r", encoding="utf-8"
     repx7= re.compile(r"\s+")
     new_text5 = repx7.sub(" ",new_text4)
     print(new_text5)
+    
+with open("output.txt","w",encoding="utf-8") as fd1:
+    fd1.write(new_text5)
     
